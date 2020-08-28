@@ -15,6 +15,15 @@ body {
     font-size: 13px;
 }
 
+.divisor{
+  width: 1px;
+  background: gray;
+  margin: 10px 15px;
+}
+#tabela-busca-cliente tr.selecionado td{
+    background-color: #AAC6F3;
+}
+
 .table-responsive1 {
     margin: 30px 0;
 }
