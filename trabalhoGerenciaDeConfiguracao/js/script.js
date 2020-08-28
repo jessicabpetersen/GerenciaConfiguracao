@@ -8,6 +8,6 @@ $(document).ready(() => {
         modal.find('.modal-title').text('Excluir Produto #' + id);
         modal.find('.modal-body').text('Você tem certeza que deseja excluir o Produto de Id #' + id);
         modal.find('#confirm').attr('href', 'deletarProduto.php?id=' + id);
-    })
+    });
 
-})
+});
