@@ -17,7 +17,7 @@ include(HEADER_TEMPLATE);
                         </div>
                     </div>
                     <h4>Visualização do Produto</h4>
-                    <form action="adicionarProduto.php" method="post">	
+                    <form action="visualizaProduto.php" method="post">	
                         <?php if (!empty($_SESSION['message'])) : ?>		
                             <div class="alert alert-<?php echo $_SESSION['type']; ?>">
                                 <?php echo $_SESSION['message']; ?></div>	

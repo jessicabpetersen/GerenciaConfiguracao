@@ -50,10 +50,6 @@ function find($table = null, $id = null) {
     return $found;
 }
 
-/** *  Pesquisa Todos os Registros de uma Tabela	 */
-function find_all($table) {
-    return find($table);
-}
 /** *  Pesquisa um Registro pela chave de outra tabela em uma Tabela	 */
 function findRelacionamento($table = null, $chave = null, $id = null) {
     $database = open_database();
@@ -83,6 +79,7 @@ function findRelacionamento($table = null, $chave = null, $id = null) {
     } close_database($database);
     return $found;
 }
+
 function find_last($tabela) {
     $database = open_database();
     $found = null;
@@ -97,6 +94,11 @@ function find_last($tabela) {
         $_SESSION['type'] = 'danger';
     } close_database($database);
     return $found;
+}
+
+/** *  Pesquisa Todos os Registros de uma Tabela	 */
+function find_all($table) {
+    return find($table);
 }
 
 /** *  Insere um registro no BD	 */

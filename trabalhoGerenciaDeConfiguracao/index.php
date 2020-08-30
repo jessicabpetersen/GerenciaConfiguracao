@@ -41,7 +41,8 @@ $db = open_database(); ?>
                     </div>				
                 </div>			
             </a>		
-        </div>	
+        </div> 
+    </div>
     </div>	
 <?php else : ?>		
 <div class="alert alert-danger" role="alert">			

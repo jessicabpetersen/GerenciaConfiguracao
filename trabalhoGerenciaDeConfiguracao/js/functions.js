@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var indexProduto = null;
-var clientePedido = null;
-var desconto = null;
+var indexProduto;
+var clientePedido;
 function valida_cpf(cpf) {
     cpf = cpf.replace('.', '')
     cpf = cpf.replace('.', '')
@@ -52,7 +51,6 @@ function valida_cpf(cpf) {
         return false;
     }
 }
-
 function addPontosCPF(cpfc) {
     $("#inputCPF").attr('maxlength', 14);
     $("#inputCPF").attr('type', "text");
@@ -145,15 +143,14 @@ btnSelecionarCliente.addEventListener("click", function () {
         alert("Selecione pelo menos uma linha");
         return true;
     }
+
     var dadosCliente = {
         'id': selecionado[0].getElementsByTagName("td")[0].innerHTML,
         'nome': selecionado[0].getElementsByTagName("td")[1].innerHTML,
         'cpf': selecionado[0].getElementsByTagName("td")[2].innerHTML,
         'cidade': selecionado[0].getElementsByTagName("td")[3].innerHTML,
-        'estado': selecionado[0].getElementsByTagName("td")[4].innerHTML,
-        'desconto': selecionado[0].getElementsByTagName("td")[5].innerHTML
+        'estado': selecionado[0].getElementsByTagName("td")[4].innerHTML
     }
-    desconto = 
     clientePedido = dadosCliente;
     var dados = JSON.stringify(dadosCliente);
     $.ajax({
@@ -186,8 +183,7 @@ btnSelecionarProduto.addEventListener("click", function () {
     var dadosProduto = {
         'id': ProdutoSelecionado[0].getElementsByTagName("td")[0].innerHTML,
         'descricao': ProdutoSelecionado[0].getElementsByTagName("td")[1].innerHTML,
-        'fabricante': ProdutoSelecionado[0].getElementsByTagName("td")[2].innerHTML,
-        'preco' :  ProdutoSelecionado[0].getElementsByTagName("td")[3].innerHTML
+        'fabricante': ProdutoSelecionado[0].getElementsByTagName("td")[2].innerHTML
     }
     dadosProdutoAdd = dadosProduto;
     var dados = JSON.stringify(dadosProduto);
@@ -197,7 +193,7 @@ btnSelecionarProduto.addEventListener("click", function () {
         data: dados, //x-www-form-urlencoded
         success: dados => {
             indexProduto++;
-            $('#tbodyProduto').append("<tr id=\"linha"+dadosProduto['id']+" \"><td>"+ dadosProduto['id']+"<input type=\"hidden\" name=\"idproduto"+indexProduto+"\" value=\""+dadosProduto['id']+"\"/></td><td>" + dadosProduto['descricao'] + "</td><td>" + dadosProduto['fabricante'] + "</td><td id=\"preco"+indexProduto+"\">"+dadosProduto['preco'] +"</td><td><input type=\"double\" id=\"qntdd" + indexProduto + "\" required name=\"qntdd"+indexProduto+"\" onchange=\"calcularValorTotal()\"></td><td id=\"desconto"+indexProduto+"\">"+clientePedido['desconto']+"</td><td><a href=\"#\"  class=\"btn btn-sm btn-danger\" data-toggle=\"modal\" data-target=\"#delete-modal-delete-produto-pedido\" data-produto-pedido=\" "+dadosProduto['id']+"\"><i class=\"material-icons\" data-toggle=\"tooltip\" title=\"Delete\">&#xE872;</i></a></td></tr>");
+            $('#tbodyProduto').append("<tr><td>"+ dadosProduto['id']+"<input type=\"hidden\" name=\"idproduto"+indexProduto+"\" value=\""+dadosProduto['id']+"\"/></td><td>" + dadosProduto['descricao'] + "</td><td>" + dadosProduto['fabricante'] + "</td><td><input type=\"double\" id=\"preco" + indexProduto + "\" required name=\"preco"+indexProduto+"\" onchange=\"calcularValorTotal()\"></td><td><input type=\"double\" id=\"qntdd" + indexProduto + "\" required name=\"qntdd"+indexProduto+"\" onchange=\"calcularValorTotal()\"></td><td><input type=\"double\" id=\"desconto" + indexProduto + "\" required name=\"desconto"+indexProduto+"\" onchange=\"calcularValorTotal()\"></td><td><a href=\"#\"  class=\"btn btn-sm btn-danger\" data-toggle=\"modal\" data-target=\"#delete-modal-delete-pedido\" data-produto=\"<?php echo $pedido['id']; ?>\"><i class=\"material-icons\" data-toggle=\"tooltip\" title=\"Delete\">&#xE872;</i></a></td></tr>");
         },
         error: function (jqXHR, textStatus, errorThrown) {
         }
@@ -211,9 +207,9 @@ function calcularValorTotal(){
         preco = "#preco"+i;
         desconto = "#desconto"+i;
         quantidade = "#qntdd"+i;
-        if($(quantidade).val() !== "" && $(preco).text() !== "" && $(desconto).text() !== ""){
-            precoTotal = parseFloat($(preco).text()) * parseFloat($(quantidade).val());
-            valorCampo += precoTotal -(precoTotal* (parseFloat($(desconto).text()/100)));
+        if($(quantidade).val() !== "" && $(preco).val() !== "" && $(desconto).val() !== ""){
+            precoTotal = parseFloat($(preco).val()) * parseFloat($(quantidade).val());
+            valorCampo += precoTotal -(precoTotal* (parseFloat($(desconto).val()/100)))
         }
     }
     campoValorTotal.val(valorCampo);
@@ -255,9 +251,46 @@ function editarValor(idproduto){
         $(idpr).removeAttr("disabled");
     }
 }
-function mostrarBotaoProduto(){
-    $("#botao-procura-produtos").attr('hidden', false);
-}
-function removeLinhaSelecionada(){
-    
-}
+
+
+
+//
+//function getDadosEnderecoPorCEP(cep) {
+//    $("#inputCEP").attr('maxlength', 8);
+//    $("#inputCEP").attr('type', "number");
+//    document.getElementById('inputRua').value = ""
+//    document.getElementById('inputBairro').value = ""
+//    document.getElementById('inputCidade').value = ""
+//    document.getElementById('inputEstado').value = ""
+//    let url = 'https://viacep.com.br/ws/' + cep + '/json/unicode/'
+//
+//    let xmlHttp = new XMLHttpRequest()
+//    xmlHttp.open('GET', url)
+//
+//    xmlHttp.onreadystatechange = () => {
+//        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+//            let dadosJSONText = xmlHttp.responseText
+//            let dadosJSONObj = JSON.parse(dadosJSONText)
+//
+////            document.getElementById('inputRua').value = dadosJSONObj.logradouro
+////            document.getElementById('inputBairro').value = dadosJSONObj.bairro
+////            document.getElementById('inputCidade').value = dadosJSONObj.localidade
+////            document.getElementById('inputEstado').value = dadosJSONObj.uf
+//
+//            $('#inputRua').val(dadosJSONObj.logradouro);
+//            $('#inputBairro').val(dadosJSONObj.bairro);
+//            $('#inputCidade').val(dadosJSONObj.localidade);
+//            $('#inputEstado').val(dadosJSONObj.uf);
+//            if(document.getElementById('inputBairro').value == ""){
+//                $("#inputBairro").attr('disabled', false);
+//            }
+//            if(document.getElementById('inputRua').value == ""){
+//                $("#inputRua").attr('disabled', false);
+//            }
+//            addPontosCEP(document.getElementById('inputCEP'));
+//
+//        }
+//    }
+//
+//    xmlHttp.send()
+//}

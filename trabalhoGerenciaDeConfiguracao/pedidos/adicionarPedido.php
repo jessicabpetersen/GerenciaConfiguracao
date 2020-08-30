@@ -62,7 +62,7 @@ include(HEADER_TEMPLATE);
                         <div class="row">
                             <div class="form-group col-md-7">
                                 <span style="text-decoration: underline;"><b>Valor total: </b></span>
-                                <input disabled="" id="inputPrecoTotal" required="true" name="valorTotal">
+                                <input disabled="" id="inputPrecoTotal" required="" name="valorTotal">
                             </div>
                         </div>
                         <div class="row">
@@ -81,5 +81,5 @@ include(HEADER_TEMPLATE);
 </section>
 <?php include './modalCliente.php'; ?>
 <?php include './modalProduto.php'; ?>
-<?php include './modalDeleteProduto.php'; ?>
+<?php include './modalDelete.php'; ?>
 <?php include(FOOTER_TEMPLATE); ?>
