@@ -35,28 +35,25 @@ function addPedido() {
             'id_cliente' => $_POST['idcliente']
         );
         $qntdProdutos = 0;
+
         foreach ($_POST as $variaveis) {
             $qntdProdutos++;
         }
 
         save('pedido', $pedidoc);
         $pedido = find_last('pedido');
-        $qntdProdutos = ($qntdProdutos - 2) / 4;
+        $qntdProdutos = ($qntdProdutos - 2) / 2;
 
         for ($i = 1; $i <= $qntdProdutos; $i++) {
             $idproduto = 'idproduto' . $i;
             $qntdd = 'qntdd' . $i;
-            $preco = 'preco' . $i;
-            $desconto = 'desconto' . $i;
             $produto_pedido = array(
                 'id_produto' => $_POST[$idproduto],
                 'id_pedido' => $pedido['id'],
                 'quantidade' => $_POST[$qntdd],
-                'preco' => $_POST[$preco],
-                'desconto' => $_POST[$desconto]
             );
             save('produto_pedido', $produto_pedido);
-        }
+        };
 
         header('location: pedido.php');
     }
@@ -69,25 +66,30 @@ function acharCliente($pedido) {
 
 function selecionarCliente($idCliente) {
     global $cliente;
-    var_dump($idCliente);
     $cliente = find('cliente', $idCliente['id']);
-    var_dump($cliente);
 }
 
 function acharProdutos($pedido) {
     global $pedido_produtos;
+    $pedido_produtos = null;
     $pedido_produtos = findRelacionamento('produto_pedido', 'id_pedido', $pedido['id']);
     valorTotal($pedido_produtos);
 }
+function retornaCliente($id){
+    return find('cliente', $id);
+}
 
 function valorTotal($pedido_produtos) {
-    global $valorTotal, $quantidadeTotal;
+    global $valorTotal, $quantidadeTotal, $cliente;
     $valorTotal = 0;
     $quantidadeTotal = 0;
     for ($index = 0; $index < count($pedido_produtos); $index++) {
+        $produto = find('produto', $pedido_produtos[$index]['id_produto']);
+        $pedido = find('pedido', $pedido_produtos[$index]['id_pedido']);
+        $cliente = find('cliente', $pedido['id_cliente']);
         $quantidadeTotal += doubleval($pedido_produtos[$index]['quantidade']);
-        $valorNormal = doubleval($pedido_produtos[$index]['preco']) * doubleval($pedido_produtos[$index]['quantidade']);
-        $valorTotal += $valorNormal - ($valorNormal * (doubleval($pedido_produtos[$index]['desconto'])) / 100);
+        $valorNormal = doubleval($produto['preco']) * doubleval($pedido_produtos[$index]['quantidade']);
+        $valorTotal += $valorNormal - ($valorNormal * (doubleval($cliente['desconto'])) / 100);
     }
     return $valorTotal;
 }
@@ -103,6 +105,10 @@ function view($id = null) {
 function retornaProduto($pedido_produtos) {
     return find('produto', $pedido_produtos['id_produto']);
 }
+function retornaClientePedido($id_pedido){
+    $pedido = find('pedido', $id_pedido);
+    return find('cliente', $pedido['id_cliente']);
+}
 
 /** *  Exclusão de um Pedido	 */
 function delete($id = null) {
@@ -116,16 +122,12 @@ function delete($id = null) {
 function edit() {
     global $pedido, $pedido_produtos;
     if (isset($_GET['id']) && isset($_POST)) {
-        echo 'id pedido: ' . $_GET['id'];
-
-        echo 'post';
-        var_dump($_POST);
         $pedido = find('pedido', $_GET['id']);
         $qntdProdutos = 0;
         foreach ($_POST as $variaveis) {
             $qntdProdutos++;
         }
-        $qntdProdutos = ($qntdProdutos - 1) / 4;
+        $qntdProdutos = ($qntdProdutos - 1) / 2;
         $pedido_produtos = findRelacionamento('produto_pedido', 'id_pedido', $_GET['id']);
         foreach ($pedido_produtos as $proped) {
             remove('produto_pedido', $proped['id']);
@@ -133,19 +135,16 @@ function edit() {
         for ($i = 1; $i <= $qntdProdutos; $i++) {
             $idproduto = 'idproduto' . $i;
             $qntdd = 'qntdd' . $i;
-            $preco = 'preco' . $i;
-            $desconto = 'desconto' . $i;
             $produto_pedido = array(
                 'id_produto' => $_POST[$idproduto],
                 'id_pedido' => $_GET['id'],
                 'quantidade' => $_POST[$qntdd],
-                'preco' => $_POST[$preco],
-                'desconto' => $_POST[$desconto]
+
             );
             save('produto_pedido', $produto_pedido);
         };
     }
-    header('location: pedido.php');
+       header('location: pedido.php');
 }
 
 function addProdutoNoPedido($idProduto) {
