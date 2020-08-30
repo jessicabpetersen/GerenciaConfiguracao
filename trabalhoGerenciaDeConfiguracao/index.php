@@ -18,7 +18,7 @@ $db = open_database(); ?>
                 </div>			
             </a>		
         </div>	
-<!--        <div class="col-xs-6 col-sm-3 col-md-2">			
+        <div class="col-xs-6 col-sm-3 col-md-2">			
             <a href="clientes/" class="btn btn-default">				
                 <div class="row">					
                     <div class="col-xs-12 text-center">						
@@ -30,7 +30,7 @@ $db = open_database(); ?>
                 </div>			
             </a>		
         </div>
-        <div class="col-xs-6 col-sm-3 col-md-2">			
+<!--        <div class="col-xs-6 col-sm-3 col-md-2">			
             <a href="pedidos/" class="btn btn-default">				
                 <div class="row">					
                     <div class="col-xs-12 text-center">						
