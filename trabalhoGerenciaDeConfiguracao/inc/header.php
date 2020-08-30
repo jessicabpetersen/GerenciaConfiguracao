@@ -56,7 +56,7 @@
                             </li>
                             <li class="nav-item divisor"></li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">Clientes</a>
+                                <a href="../clientes/cliente.php" class="nav-link">Clientes</a>
                             </li>
 		<!--					<li class="nav-item divisor"></li>
 							<li class="nav-item">
