@@ -51,17 +51,17 @@
 
                     <div class="collapse navbar-collapse" id="nav-principal">
                         <ul class="navbar-nav ml-auto">
-<!--                            <li class="nav-item">
-                                <a href="" class="nav-link">Pedidos</a>
+							<li class="nav-item">
+								<a href="../produto/produto.php" class="nav-link">Produto</a>
                             </li>
-                            <li class="nav-item divisor"></li>
-                            <li class="nav-item">-->
-                            <a href="../produto/produto.php" class="nav-link">Produto</a>
-                            </li>
-<!--                            <li class="nav-item divisor"></li>
+                            <li class="nav-item divisor" style=" width: 1px;  background: gray;   margin: 10px 15px;"></li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">Clientes</a>
-                            </li>-->
+                                <a href="../clientes/cliente.php" class="nav-link">Clientes</a>
+                            </li>
+                            <li class="nav-item divisor" style=" width: 1px;  background: gray;   margin: 10px 15px;">></li>
+                            <li class="nav-item">
+                                <a href="../pedidos/pedido.php" class="nav-link">Pedidos</a>
+                            </li>
                         </ul>
                     </div> <!-- fim navbar -->
                 </div><!-- Fim container -->
