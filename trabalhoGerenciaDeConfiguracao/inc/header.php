@@ -8,7 +8,6 @@
         <meta name="author" content="">
         <title>Gerencia de Configuração</title>
 
-        <script src="script.js" type="text/javascript"></script>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -19,11 +18,9 @@
         <link rel="icon" href="favicon.ico" type="image/favicon-icon" />
         <link rel="shortcut icon" href="favicon.ico" type="image/favicon-icon" />
 
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="/GerenciaConfiguracao/trabalhoGerenciaDeConfiguracao/css/style.css" rel="stylesheet" type="text/css"/>
         <!-- Bootstrap core CSS -->
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom fonts for this template -->
-        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -33,18 +30,15 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="../js/script.js" type="text/javascript"></script>
-		
+        <script src="/GerenciaConfiguracao/trabalhoGerenciaDeConfiguracao/js/jquery.mask.js" type="text/javascript"></script>
+        <script src="/GerenciaConfiguracao/trabalhoGerenciaDeConfiguracao/js/script.js" type="text/javascript"></script>
+        <script src="/GerenciaConfiguracao/trabalhoGerenciaDeConfiguracao/js/functions.js" type="text/javascript"></script>
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
-
         <header>
             <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-dark bg-dark">
                 <div class="container">
-                    <a href="../index.php" class="navbar-brand">Konoha informática</a>
+                    <a href="/GerenciaConfiguracao/trabalhoGerenciaDeConfiguracao/index.php" class="navbar-brand">Konoha informática</a>
                     <button class="navbar-toggler" data-target="#nav-principal" data-toggle="collapse">
                         <i class="fas fa-bars text-white"></i>
                     </button>
@@ -52,11 +46,11 @@
                     <div class="collapse navbar-collapse" id="nav-principal">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                            <a href="../produto/produto.php" class="nav-link">Produto</a>
+                            <a href="/GerenciaConfiguracao/trabalhoGerenciaDeConfiguracao/produto/produto.php" class="nav-link">Produto</a>
                             </li>
                             <li class="nav-item divisor"></li>
                             <li class="nav-item">
-                                <a href="../clientes/cliente.php" class="nav-link">Clientes</a>
+                                <a href="/GerenciaConfiguracao/trabalhoGerenciaDeConfiguracao/clientes/cliente.php" class="nav-link">Clientes</a>
                             </li>
 		<!--					<li class="nav-item divisor"></li>
 							<li class="nav-item">
