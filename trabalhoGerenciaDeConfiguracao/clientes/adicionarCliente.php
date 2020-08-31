@@ -21,12 +21,16 @@ include(HEADER_TEMPLATE);
                         <div class="row">
                             <div class="form-group col-md-7">	      
                                 <label for="name">Nome</label>	      
-                                <input type="text" class="form-control" name="cliente['nome']" required >	    
+                                <input type="text" class="form-control" name="cliente['nome']" required >
                             </div>	
-                            <div class="form-group col-md-5">	      
+                            <div class="form-group col-md-3">	      
                                 <label for="name">CPF</label>	      
-                                <input type="text" class="form-control cpf" name="cliente['cpf']" id="inputCPF" maxlength="11" required  placeholder="000.000.000-00" onchange="valida_cpf(this.value)">	    
-                            </div>	
+                                <input type="number" class="form-control" name="cliente['cpf']" id="inputCPF" maxlength="11" required  placeholder="000.000.000-00" onblur="valida_cpf(this.value)">	    
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="name">Desconto (%)</label>	      
+                                <input type="number" max="99" maxlength="2" class="form-control" name="cliente['desconto']" required onchange="validaDesconto(this.value)">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">	      

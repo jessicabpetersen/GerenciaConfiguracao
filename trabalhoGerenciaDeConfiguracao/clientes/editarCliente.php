@@ -24,10 +24,14 @@ include(HEADER_TEMPLATE);
                                 <label for="name">Nome</label>	      
                                 <input type="text" class="form-control" name="cliente['nome']" required value="<?php echo $cliente['nome']; ?>">	    
                             </div>	
-                            <div class="form-group col-md-5">	      
+                            <div class="form-group col-md-3">	      
                                 <label for="name">CPF</label>	      
-                                <input type="text" class="form-control cpf" name="cliente['cpf']" id="inputCPF" maxlength="11" required  placeholder="000.000.000-00" onchange="valida_cpf(this.value)" value="<?php echo $cliente['cpf']; ?>">	    
-                            </div>	
+                                <input type="text" class="form-control" name="cliente['cpf']" id="inputCPF" maxlength="11" required  placeholder="000.000.000-00" onblur="valida_cpf(this.value)" value="<?php echo $cliente['cpf']; ?>">	    
+                            </div>
+                            <div class="form-group col-md-2">	      
+                                <label for="name">Desconto (%)</label>	      
+                                <input type="number"  maxlength="2" max="99" class="form-control" name="cliente['desconto']" required value="<?php echo $cliente['desconto']; ?>">	    
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">	      

@@ -50,6 +50,52 @@ function find($table = null, $id = null) {
     return $found;
 }
 
+/** *  Pesquisa um Registro pela chave de outra tabela em uma Tabela	 */
+function findRelacionamento($table = null, $chave = null, $id = null) {
+    $database = open_database();
+    $found = null;
+    try {
+        if ($id) {
+            $sql = "SELECT * FROM " . $table . " WHERE " . $chave . " = " . $id;
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        } else {
+            $sql = "SELECT * FROM " . $table;
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+                /* Metodo alternativo	        
+                 * $found = array();		        
+                 * while ($row = $result->fetch_assoc()) {	         
+                 *  array_push($found, $row);	        
+                 * } */
+            }
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    } close_database($database);
+    return $found;
+}
+
+function find_last($tabela) {
+    $database = open_database();
+    $found = null;
+    try {
+        $sql = "SELECT * FROM " . $tabela . " where id = (select max(id) from pedido)";
+        $result = $database->query($sql);
+        if ($result->num_rows > 0) {
+            $found = $result->fetch_assoc();
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    } close_database($database);
+    return $found;
+}
+
 /** *  Pesquisa Todos os Registros de uma Tabela	 */
 function find_all($table) {
     return find($table);
@@ -109,6 +155,24 @@ function remove($table = null, $id = null) {
     try {
         if ($id) {
             $sql = "DELETE FROM " . $table . " WHERE id = " . $id;
+            $result = $database->query($sql);
+            if ($result = $database->query($sql)) {
+                $_SESSION['message'] = "Registro Removido com Sucesso.";
+                $_SESSION['type'] = 'success';
+            }
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+}
+
+function removeProdutoPedido($id = null){
+     $database = open_database();
+     try {
+        if ($id) {
+            $sql = "DELETE FROM produto_pedido WHERE id_pedido = " . $id;
             $result = $database->query($sql);
             if ($result = $database->query($sql)) {
                 $_SESSION['message'] = "Registro Removido com Sucesso.";

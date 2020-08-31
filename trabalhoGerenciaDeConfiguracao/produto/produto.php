@@ -34,6 +34,7 @@ include(HEADER_TEMPLATE);
                         <tr>
                             <th>Descrição</th>
                             <th>Fabricante</th>
+							<th>Preço</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -44,6 +45,7 @@ include(HEADER_TEMPLATE);
                                 <tr>
                                     <td><?php echo $produto['descricao'] ?></td>
                                     <td><?php echo $produto['fabricante'] ?></td>
+									<td><?php echo $produto['preco'] ?></td>
                                     <td>
                                         <a href="visualizaProduto.php?id=<?php echo $produto['id']; ?>" class="visualizarProduto" ><i class="material-icons" data-toggle="tooltip" title="Visualizar">&#xe417;</i></a>
                                         <a href="editarProduto.php?id=<?php echo $produto['id']; ?>" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>

@@ -36,6 +36,7 @@ include(HEADER_TEMPLATE);
                             <th>CPF</th>
                             <th>Cidade</th>
                             <th>Estado</th>
+							<th>Desconto (%)</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -48,6 +49,7 @@ include(HEADER_TEMPLATE);
                                     <td><?php echo $cliente['cpf'] ?></td>
                                     <td><?php echo $cliente['cidade'] ?></td>
                                     <td><?php echo $cliente['estado'] ?></td>
+									<td><?php echo $cliente['desconto'] ?></td>
                                     <td>
                                         <a href="visualizaCliente.php?id=<?php echo $cliente['id']; ?>" class="visualizarCliente" ><i class="material-icons" data-toggle="tooltip" title="Visualizar">&#xe417;</i></a>
                                         <a href="editarCliente.php?id=<?php echo $cliente['id']; ?>" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>

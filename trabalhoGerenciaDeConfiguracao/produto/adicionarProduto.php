@@ -28,6 +28,12 @@ include(HEADER_TEMPLATE);
                                 <input type="text" class="form-control" name="produto['fabricante']" required >	    
                             </div>	
                         </div>
+						<div class="row">
+                            <div class="form-group col-md-7">	      
+                                <label for="name">Preco</label>	      
+                                <input type="number" class="form-control" name="produto['preco']" required >	    
+                            </div>	
+                        </div>
                         <div id="actions" class="row">	
                             <div class="col-md-12">	    
                                 <button type="submit" class="btn btn-primary">Salvar</button>

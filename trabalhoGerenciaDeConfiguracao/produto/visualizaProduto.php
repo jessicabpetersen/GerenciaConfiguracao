@@ -34,6 +34,12 @@ include(HEADER_TEMPLATE);
                                 <input type="text" class="form-control" name="produto['fabricante']" value="<?php echo $produto['fabricante']; ?>" disabled="">	    
                             </div>	
                         </div>
+						<div class="row">
+                            <div class="form-group col-md-7">	      
+                                <label for="name">Preço</label>	      
+                                <input type="text" class="form-control" name="produto['preco']" value="<?php echo $produto['preco']; ?>" disabled="">	    
+                            </div>	
+                        </div>
                         <div id="actions" class="row">	
                             <div class="col-md-12">	    
                                 
