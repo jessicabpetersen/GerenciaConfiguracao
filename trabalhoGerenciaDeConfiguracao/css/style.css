@@ -160,7 +160,7 @@ table.table .avatar {
     margin-top: 10px;
     font-size: 13px;
 }    
- Custom checkbox 
+Custom checkbox 
 .custom-checkbox {
     position: relative;
 }
@@ -211,7 +211,7 @@ table.table .avatar {
     box-shadow: none;
     background: #ddd;
 }
- Modal styles 
+Modal styles 
 .modal .modal-dialog {
     max-width: 400px;
 }
@@ -242,4 +242,10 @@ table.table .avatar {
 }	
 .modal form label {
     font-weight: normal;
-}	
+}
+
+.divisor{
+  width: 1px;
+  background: gray;
+  margin: 10px 15px;
+}

@@ -1,3 +1,4 @@
+
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -251,46 +252,3 @@ function editarValor(idproduto){
         $(idpr).removeAttr("disabled");
     }
 }
-
-
-
-//
-//function getDadosEnderecoPorCEP(cep) {
-//    $("#inputCEP").attr('maxlength', 8);
-//    $("#inputCEP").attr('type', "number");
-//    document.getElementById('inputRua').value = ""
-//    document.getElementById('inputBairro').value = ""
-//    document.getElementById('inputCidade').value = ""
-//    document.getElementById('inputEstado').value = ""
-//    let url = 'https://viacep.com.br/ws/' + cep + '/json/unicode/'
-//
-//    let xmlHttp = new XMLHttpRequest()
-//    xmlHttp.open('GET', url)
-//
-//    xmlHttp.onreadystatechange = () => {
-//        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-//            let dadosJSONText = xmlHttp.responseText
-//            let dadosJSONObj = JSON.parse(dadosJSONText)
-//
-////            document.getElementById('inputRua').value = dadosJSONObj.logradouro
-////            document.getElementById('inputBairro').value = dadosJSONObj.bairro
-////            document.getElementById('inputCidade').value = dadosJSONObj.localidade
-////            document.getElementById('inputEstado').value = dadosJSONObj.uf
-//
-//            $('#inputRua').val(dadosJSONObj.logradouro);
-//            $('#inputBairro').val(dadosJSONObj.bairro);
-//            $('#inputCidade').val(dadosJSONObj.localidade);
-//            $('#inputEstado').val(dadosJSONObj.uf);
-//            if(document.getElementById('inputBairro').value == ""){
-//                $("#inputBairro").attr('disabled', false);
-//            }
-//            if(document.getElementById('inputRua').value == ""){
-//                $("#inputRua").attr('disabled', false);
-//            }
-//            addPontosCEP(document.getElementById('inputCEP'));
-//
-//        }
-//    }
-//
-//    xmlHttp.send()
-//}

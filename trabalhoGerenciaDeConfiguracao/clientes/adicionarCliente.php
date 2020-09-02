@@ -53,7 +53,7 @@ include(HEADER_TEMPLATE);
                             </div>
                             <div class="form-group col-md-2">	      
                                 <label for="name">Número</label>	      
-                                <input type="text" class="form-control" name="cliente['numero']" required>	    
+                                <input type="text" class="form-control number" name="cliente['numero']" required>	    
                             </div>
                         </div>
                         <div id="actions" class="row">	
