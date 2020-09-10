@@ -14,6 +14,11 @@ body {
     font-family: 'Varela Round', sans-serif;
     font-size: 13px;
 }
+.divisor{
+  width: 1px;
+  background: gray;
+  margin: 10px 15px;
+}
 
 .table-responsive1 {
     margin: 30px 0;
@@ -153,7 +158,7 @@ table.table .avatar {
     margin-top: 10px;
     font-size: 13px;
 }    
-Custom checkbox 
+ Custom checkbox 
 .custom-checkbox {
     position: relative;
 }
@@ -204,7 +209,7 @@ Custom checkbox
     box-shadow: none;
     background: #ddd;
 }
-Modal styles 
+ Modal styles 
 .modal .modal-dialog {
     max-width: 400px;
 }
@@ -235,10 +240,4 @@ Modal styles
 }	
 .modal form label {
     font-weight: normal;
-}
-
-.divisor{
-  width: 1px;
-  background: gray;
-  margin: 10px 15px;
-}
+}	
