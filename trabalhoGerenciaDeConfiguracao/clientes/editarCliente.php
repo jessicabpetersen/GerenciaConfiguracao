@@ -26,13 +26,13 @@ include(HEADER_TEMPLATE);
                             </div>	
                             <div class="form-group col-md-5">	      
                                 <label for="name">CPF</label>	      
-                                <input type="text" class="form-control" name="cliente['cpf']" id="inputCPF" maxlength="11" required  placeholder="000.000.000-00" onblur="valida_cpf(this.value)" value="<?php echo $cliente['cpf']; ?>">	    
+                                <input type="number" class="form-control" name="cliente['cpf']" id="inputCPF" maxlength="11" required  placeholder="000.000.000-00" onblur="valida_cpf(this.value)" value="<?php echo $cliente['cpf']; ?>">	    
                             </div>	
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">	      
                                 <label for="name">CEP</label>	      
-                                <input type="text" class="form-control" name="cliente['cep']" id="inputCEP" placeholder="00000-000" maxlength="8" required onblur="addPontosCEP(this.value)" value="<?php echo $cliente['cep']; ?>">
+                                <input type="number" class="form-control" name="cliente['cep']" id="inputCEP" placeholder="00000-000" maxlength="8" required onblur="addPontosCEP(this.value)" value="<?php echo $cliente['cep']; ?>">
                             </div>
                             <div class="form-group col-md-6">	      
                                 <label for="name">Cidade</label>	      
@@ -54,7 +54,7 @@ include(HEADER_TEMPLATE);
                             </div>
                             <div class="form-group col-md-2">	      
                                 <label for="name">Número</label>	      
-                                <input type="text" class="form-control" name="cliente['numero']" required value="<?php echo $cliente['numero']; ?>">	    
+                                <input type="number" class="form-control" name="cliente['numero']" required value="<?php echo $cliente['numero']; ?>">	    
                             </div>
                         </div>
                         <div id="actions" class="row">	
