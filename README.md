@@ -45,5 +45,10 @@ cliente.
 
 **Configurações do banco**  
 Para configurar o banco de dados deverá acessar o arquivo *config.php* localizado dentro da pasta raiz do projeto, ou seja, *trabalhoGerenciaDeConfiguracao/config.php*  
-
-A conexão do banco bem como as funções genéricas de busca, alteração, exclusão e adição se encontram no arquivo *database.php* localizado dentro da pasta *inc*, ou seja, *trabalhoGerenciaDeConfiguracao/inc/database.php*
+  
+A conexão do banco bem como as funções genéricas de busca, alteração, exclusão e adição se encontram no arquivo *database.php* localizado dentro da pasta *inc*, ou seja, *trabalhoGerenciaDeConfiguracao/inc/database.php*  
+  
+  
+  
+**Link do vídeo**  
+[https://youtu.be/c_N5qPO2Svc](https://youtu.be/c_N5qPO2Svc)
