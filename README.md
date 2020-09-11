@@ -1,7 +1,11 @@
 # gerencia_configuracao_trabalho
 
-### Trabalho para a disciplina Gerência de Configuração da UDESC
-
+### Trabalho para a disciplina Gerência de Configuração da UDESC  
+  
+**Integrantes do grupo**  
+Alexander Felipe Chiudini Ristow  
+Jéssica Bernardi Petersen  
+  
 **Objetivo**  
 Este trabalho tem como objetivo principal mostrar ao aluno de maneira prática as bases da
 gerência de configuração e seus benefícios.
