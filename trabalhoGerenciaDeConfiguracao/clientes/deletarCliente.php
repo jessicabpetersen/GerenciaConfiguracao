@@ -3,7 +3,7 @@
 require_once './functionsCliente.php';
 if (isset($_GET['id'])) {
     delete($_GET['id']);
-}
-else {
+} else {
     die("ERRO: ID não definido.");
 }
+?>

@@ -28,11 +28,11 @@ include(HEADER_TEMPLATE);
                                 <label for="name">Nome</label>	      
                                 <input type="text" class="form-control" disabled="" value="<?php echo $cliente['nome']; ?>">	    
                             </div>	
-                            <div class="form-group col-md-3">	      
+                            <div class="form-group col-md-5">	      
                                 <label for="name">CPF</label>	      
                                 <input type="text" class="form-control"  disabled="" value="<?php echo $cliente['cpf']; ?>">	    
                             </div>
-							<div class="form-group col-md-2">	      
+                            <div class="form-group col-md-5">	      
                                 <label for="name">Desconto (%)</label>	      
                                 <input type="number" maxlength="2" class="form-control"  disabled="" value="<?php echo $cliente['desconto']; ?>">	    
                             </div>

@@ -31,11 +31,13 @@ include(HEADER_TEMPLATE);
                                 <label for="name">Desconto (%)</label>	      
                                 <input type="number" max="99" maxlength="2" class="form-control" name="cliente['desconto']" required onchange="validaDesconto(this.value)">
                             </div>
+
                         </div>
+
                         <div class="row">
                             <div class="form-group col-md-4">	      
                                 <label for="name">CEP</label>	      
-                                <input type="text" class="form-control cep" name="cliente['cep']" id="inputCEP" placeholder="00000-000" maxlength="8" required onblur="addPontosCEP(this.value)">
+                                <input type="number" class="form-control" name="cliente['cep']" id="inputCEP" placeholder="00000-000" maxlength="8" required onblur="addPontosCEP(this.value)">
                             </div>
                             <div class="form-group col-md-6">	      
                                 <label for="name">Cidade</label>	      
@@ -57,7 +59,7 @@ include(HEADER_TEMPLATE);
                             </div>
                             <div class="form-group col-md-2">	      
                                 <label for="name">Número</label>	      
-                                <input type="text" class="form-control number" name="cliente['numero']" required>	    
+                                <input type="number" class="form-control" name="cliente['numero']" required>	    
                             </div>
                         </div>
                         <div id="actions" class="row">	
